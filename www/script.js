@@ -1,3 +1,4 @@
+// モジュールの宣言
 var myApp = angular.module('MyApp', ['onsen', 'ui.router']);
 
 // 遷移処理

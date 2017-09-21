@@ -13,28 +13,35 @@
 <body ng-app="MyApp">
 
 	<ons-page>
+        <!-- ツールバー -->
 		<ons-toolbar>
 			<div class="center">Minimum</div>
 		</ons-toolbar>
 		
+        <!-- 画面のメイン部分 -->
 		<div ng-controller="LoadingController">
 			<ons-button ng-click="changePage('page-A')">pageA</ons-button>
 			<ons-button ng-click="changePage('page-B')">pageB</ons-button>
 			
+            <!-- 遷移読込部分 -->
 			<div style="padding: 20px 10px;" ui-view></div>
 			
+            <!-- ローディング読込用ディレクティブ -->
 			<my-loader></my-loader>
 		</div>
 		
+        <!-- 画面A -->
 		<script id="pageA.html" type="text/ng-template">
 			<div style="background-color: #FFCCCC; padding: 10px;">pageAだよ</div>
 		</script>
+        <!-- 画面B -->
 		<script id="pageB.html" type="text/ng-template">
 			<div style="background-color: #CCCCFF; padding: 10px;">pageBだよ</div>
 		</script>
 
 	</ons-page>
-	
+    
+    <!-- ローディング画面 -->
 	<ons-template id="loader.html">
 		<div ng-if="$root.isLoading" class="loader-parent"><div class="loader">Loading...</div></div>
 	</ons-template>
